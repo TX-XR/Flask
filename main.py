@@ -27,6 +27,3 @@ def post_something():
     return _corsify(jsonify(status="success",
                             received_input=input_var,
                             computed_result=result_value))
-
-if __name__ == '__main__':
-    app.run(host='localhost', port=8989)

@@ -15,7 +15,7 @@
     <script>
     // --- Existing fetch (GET) example ---
     function example() {
-        const url = 'http://localhost:8989/access_with_javascript';
+        const url = '/access_with_javascript';
         fetch(url)
             .then(response => response.json())
             .then(json => {
@@ -28,7 +28,7 @@
     // POST: jQuery AJAX 示例
     function sendData() {
       $.ajax({
-        url: "http://localhost:8989/post_something",  // URL (set as in exercise)
+        url: "/post_something",  // URL (set as in exercise)
         type: "POST",
         contentType: "application/json",
         data: JSON.stringify({'inputVar': 1}), // Here we can include data
