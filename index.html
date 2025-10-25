@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask-JS Demo</title>
+    <!-- jQuery for AJAX -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h2>Flask JSON Response:</h2>
+    <div id="demo"></div>
+
+    <button onclick="example()">Fetch (GET) from Flask</button>
+    <button onclick="sendData()">Send (POST) to Flask</button>
+
+    <script>
+    // --- Existing fetch (GET) example ---
+    function example() {
+        const url = 'http://localhost:8989/access_with_javascript';
+        fetch(url)
+            .then(response => response.json())
+            .then(json => {
+                console.log(json);
+                document.getElementById("demo").innerHTML = JSON.stringify(json);
+            });
+    }
+
+    // --- New AJAX (POST) example ---
+    // POST: jQuery AJAX 示例
+    function sendData() {
+      $.ajax({
+        url: "http://localhost:8989/post_something",  // URL (set as in exercise)
+        type: "POST",
+        contentType: "application/json",
+        data: JSON.stringify({'inputVar': 1}), // Here we can include data
+        success: function( data ) { 
+            alert("success: " + JSON.stringify(data)); }   
+        });
+    }
+    </script>
+</body>
+</html>
